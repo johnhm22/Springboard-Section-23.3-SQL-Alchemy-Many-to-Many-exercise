@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}New user form{% endblock %}
+
+{% block content %}
+
+        <div class="container">    
+            <div class="row justify-content-center">
+                <div class="col-xl-6 border shadow rounded p-4 mx-3 mx-md-0 mt-4">
+                    <h2>Edit Post: {{post.title}}</h2>
+                    <form action="/posts/{{post.id}}/edit" method="POST">
+                        <div class="form-group">
+                        <label class="pr-2" for="title">Title</label>
+                        <!-- <input class="col form-control form-rounded" type="text" name="title" placeholder="Enter a title"> -->
+                        <textarea class="col form-control form-rounded" type="text" name="title" placeholder="Title" rows='3'>{{post.title}}</textarea>
+                        </div>
+                        <div class="form-group">
+                        <label class="pr-2" for="content">Post Content</label>
+                        <textarea class="col form-control form-rounded" type="text" name="content" placeholder="Add contents" rows='3'>{{post.content}}</textarea>
+                        </div>
+                        <div class="form-group row">
+                        <a class="btn btn-sm btn-outline-info m-2" href="/users" role="button">Cancel</a>
+                        <button class="btn btn-sm m-2 btn-success">Edit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

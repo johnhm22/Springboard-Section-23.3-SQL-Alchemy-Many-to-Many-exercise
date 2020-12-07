@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit user{% endblock %}
+
+{% block content %}
+
+        <div class="container">    
+            <div class="row justify-content-center">
+                <div class="col-xl-6 border shadow rounded p-4 mx-3 mx-md-0 mt-4">
+                    <h2>Edit User</h2>
+                    <form action="/users/{{user.id}}/edit" method="POST">
+                        <div class="form-group row">
+                            <label class="pr-2" for="first_name">First Name</label>
+                            <input class="form-control form-rounded" type="text" name="first_name" placeholder="{{user.first_name}}">
+                        </div>
+                        <div class="form-group row">
+                            <label class="pr-2" for="last_name">Last Name</label>
+                            <input class="form-control form-rounded" type="text" name="last_name" placeholder="{{user.last_name}}">
+                        </div>
+                        <div class="form-group row">
+                            <label class="pr-2" for="image_url">Image URL</label>
+                            <input class="form-control form-rounded" type="text" name="image_url" placeholder="{{user.image_url}}">
+                        </div>
+                        <div class="form-group row">
+                            <a class="btn btn-sm btn-outline-info m-2" href="/users" role="button">Cancel</a>
+                            <button class="btn btn-sm btn-success m-2">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

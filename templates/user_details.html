@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}User details{% endblock %}
+
+{% block content %}
+
+        <div class="container">    
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-xl-6 border shadow rounded p-4 mx-3 mx-md-0">
+                    <div class="col">
+                        <img class="user_image img-thumbnail" 
+                        src="{{user.image_url}}"
+                        alt="Image of user" >
+                    </div> 
+                    <div class="col">
+                        <h1>{{user.first_name}} {{user.last_name}}</h1>                    
+                        <a class="btn btn-sm btn-danger float-right m-2" href="/users/{{user.id}}/delete" role="button">Delete</a>
+                        <a class="btn btn-sm btn-primary float-right m-2" href="/users/{{user.id}}/edit" role="button">Edit</a>
+                            <div>
+                                <h2>Posts</h2>
+                                <ul>
+                                {% for post in posts%}
+                                <li id="post_title"><a href="/posts/{{post.id}}">{{post.title}}</a></li>
+                                {% endfor %}
+                                </ul>
+                                <a class="btn btn-sm btn-info m-2" href="/users/{{user.id}}/posts/new" role="button">Add Post</a>
+                            </div>
+                    </div>
+                </div>
+              
+            </div>
+       
+        </div>
+
+{% endblock %}

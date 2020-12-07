@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}User details{% endblock %}
+
+{% block content %}
+
+        <div class="container">    
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-xl-6 border shadow rounded p-4 mx-3 mx-md-0">
+                    <div class="col">
+                        <h1>{{post.title}}</h1> 
+                        <div>
+                            {{post.content}}
+                        </div>
+                        <a class="btn btn-sm btn-primary btn-outline m-2" href="/users/{{post.user.id}}" role="button">Cancel</a>
+                        <a class="btn btn-sm btn-primary m-2" href="/posts/{{post.id}}/edit" role="button">Edit</a>
+                        <a class="btn btn-sm btn-danger m-2" href="/posts/{{post.id}}/delete" role="button">Delete</a>
+                    </div>
+                </div>
+              
+            </div>
+       
+        </div>
+
+{% endblock %}
